@@ -18,11 +18,13 @@ def process_request():
         print("Queue is empty. No requests to process.")
 
 def task1():
-    while True:
-        generate_request()
-        process_request()
-
-        time.sleep(1)
+    try:
+        while True:
+            generate_request()
+            process_request()
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("Program terminated by user.")
 
 task1()
 
